@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Sam Benizri" />
+	<meta name="description" content="Une brève description de la page" />
+	<meta name="keywords" content="mots-clés, séparés, par des virgules" />
+	<title>TD1 - Exercice 1</title>
+	<link href="assets/favicon.ico" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="css/td1.css" />
+	<script defer="defer" src="js/td1.js"></script>
+</head>
+
+<body onload="onLoad();">
+	<h1 id="title"> Apparus pour la première fois. </h1>
+
+	<h2>Ces deux personnages</h2>
+	<h2 class="firstOrLast">Souvent effrayés d'un rien<h2>
+			<h2>Politiquement, le Pakistan</h2>
+			<h3 class="firstOrLast">Le système politique</h3>
+			<h3>Les années 1930.</h3>
+			<h3>En Occident</h3>
+
+			<div>
+				<p>
+					Bonsoir <span>mon ami</span>
+				</p>
+			</div>
+
+			<div>
+				<p>
+					Bonjour <span>notre ennemi</span>
+				</p>
+			</div>
+
+
+			<button onclick="swapInnerHTML()">Echanger le contenu des balises <p> </button>
+
+			<div id="update-date"> </div>
+			<script>
+				function dateAlter() {
+					var lastModified = new Date(document.lastModified);
+					var author = document.querySelector('meta[name="author"]').getAttribute('content');
+					var dateString = lastModified.toLocaleDateString('fr-FR', {
+						weekday: 'long',
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric'
+					});
+					var text = 'Dernière modification : le ' + dateString + ' par ' + author;
+					var div = document.getElementById('update-date');
+					div.textContent = text;
+				}
+				window.onload = dateAlter;
+			</script>
+
+			<p> il reste xxx jours avant le 19 juillet 202x</p>
+			<p id="clock"> </p>
+			<div id="graphic-clock"> </div>
+			<form>
+				<label for="number-input">Veuillez entrer un nombre :</label>
+				<input type="text" id="number-input" name="number-input" class="white">
+			</form>
+
+			<aside>
+				<ul id="menu">
+					<li>
+						<h3>
+							<span class="toggle-icon"></span> Informations générales
+						</h3>
+						<ul>
+							<li><a href="#">Accueil</a></li>
+							<li><a href="#">CV</a></li>
+						</ul>
+
+						<h3>
+							<span class="toggle-icon"></span> Recherche
+						</h3>
+						<ul>
+							<li><a href="#">Activités</a></li>
+							<li><a href="#">Rayonnement Scientifique</a></li>
+							<li><a href="#">Projets en cours</a></li>
+							<li><a href="#">Anciens projets</a></li>
+							<li><a href="#">Publications</a></li>
+						</ul>
+
+						<h3>
+							<span class="toggle-icon"></span> Enseignement
+						</h3>
+						<ul>
+							<li><a href="#">Département Informatique</a></li>
+							<li><a href="#">LP SIL</a></li>
+							<li><a href="#">Polytech Nice-Sophia</a></li>
+							<li><a href="#">Autres</a></li>
+							<li><a href="#">Stages et Projets</a></li>
+						</ul>
+
+						<h3>
+							<span class="toggle-icon"></span> Personnel
+						</h3>
+					</li>
+				</ul>
+			</aside>
+</body>
+
+</html>
